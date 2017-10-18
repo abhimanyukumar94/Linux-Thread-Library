@@ -13,7 +13,7 @@ struct request {
 	int id;
 	int track;
 };
-//disk scheduler uses Shortest Seek Time First (SSTF) Algorithm. here track is synonyms with head
+//disk scheduler uses Shortest Seek Time First (SSTF) Algorithm. here variable track is synonyms with head
 int mutex, diskQfull, diskQopen, diskQmax, numthreads, lasttrack; //lastrack is the disk just being serviced
 char** filenames;
 bool* serviced;
