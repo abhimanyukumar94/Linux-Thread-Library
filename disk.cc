@@ -43,7 +43,7 @@ void serviceRequest() { //servicing the request at the front of the queue
 	delete r;
 }
 
-void scheduler(void* (int)id) { //schedules the requests and adds them approriately to the queue. ensures synchronisation
+void scheduler(void* (int)id) { //schedules the requests to ensure synchronisation
 	int requesterID = id;
 	ifstream in(filenames[requesterID]);
 	int track = 0;
