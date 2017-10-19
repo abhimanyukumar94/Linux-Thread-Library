@@ -3,4 +3,4 @@ A concurrent program to issue and service disk requests. The disk scheduler gets
 
 Requests in the disk queue are NOT serviced in FIFO order but instead in SSTF order (shortest seek time first), since the latter requires less number of head movements.
 
-The service thread keeps the disk queue as full as possible to minimize average seek distance and **only handles a request when the disk queue has the largest possible number of requests**.
+The service thread keeps the disk queue as full as possible to minimize average seek distance and **only handles a request when the disk queue has the largest possible number of requests**. Hence disk size is the condition variable.
