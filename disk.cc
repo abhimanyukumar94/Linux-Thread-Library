@@ -14,7 +14,7 @@ struct request {
 	int track;
 };
 //disk scheduler uses Shortest Seek Time First (SSTF) Algorithm. here variable track is synonyms with head
-int mutex, diskQfull, diskQopen, diskQmax, numthreads, lasttrack; //lastrack is the disk just being serviced
+int mutex, diskQfull, diskQopen, diskQmax, numthreads, lasttrack; //lastrack is the disk just being serviced, numthreads -> #threads not Qued
 char** filenames;
 bool* serviced;
 deque<request*> diskQ;
@@ -68,7 +68,7 @@ void scheduler(void* (int)id) { //schedules the requests and adds new request at
 	while (serviced[requesterID] == false)
 		thread_wait(mutex, diskQfull);
 
-	//after thread is serviced, decrease the number of threads
+	//after thread is put in service , decrease the number of threads not queued
 	numthreads--;
 	if (numthreads < diskQmax) {
 		diskQmax--;
