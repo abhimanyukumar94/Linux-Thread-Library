@@ -59,6 +59,9 @@ void scheduler(void* (int)id) { //schedules the requests to ensure synchronisati
 
 	while (isdiskQfull() || serviced[r->id] == false) //MESA
 		thread_wait(mutex, diskQfull);
+	
+	sendRequest(r);
+    	thread_broadcast(mutex, diskQfull);
 	}
 	in.close();
 
