@@ -68,7 +68,7 @@ void scheduler(void* (int)id) { //schedules the requests and adds new request at
 	while (serviced[requesterID] == false)
 		thread_wait(mutex, diskQfull);
 
-	//after thread is put in service , decrease the number of threads not queued
+	//after thread is put in service , decrease the number of threads that are not queued
 	numthreads--;
 	if (numthreads < diskQmax) {
 		diskQmax--;
