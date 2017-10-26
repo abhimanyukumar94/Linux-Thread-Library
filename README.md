@@ -15,7 +15,7 @@ int thread_wait(unsigned int lock, unsigned int cond)
 int thread_signal(unsigned int lock, unsigned int cond)
 int thread_broadcast(unsigned int lock, unsigned int cond):__ implement [Mesa](https://en.wikipedia.org/wiki/Monitor_(synchronization)) monitors in your thread library.
 
-__Note:__ Each of these functions returns 0 on success and -1 on failure except for thread_libinit, which does not return at all on success
+__Note:__ Each of these functions returns 0 on success and -1 on failure except for thread_libinit, which does not return at all on success.
 
 # Disk-Scheduler
 A concurrent program to issue and service disk requests. The disk scheduler gets and schedules disk I/Os for multiple threads. Threads issue disk requests by queueing them at the disk scheduler. The disk scheduler queue can contain at most a specified number of requests; threads must wait if the queue is full.
