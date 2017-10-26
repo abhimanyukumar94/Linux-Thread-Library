@@ -1,5 +1,5 @@
 # Thread Library
-A user space thread library in C++ that allows for multi-threaded programs to run.
+A user space thread library in C++ that allows for multi-threaded programs to run using primitives such as lock, unlock, wait, signal, broadcast, yield.
 
 ## Thread Library Interfaces ##
 
