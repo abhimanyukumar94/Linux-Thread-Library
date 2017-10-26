@@ -9,11 +9,11 @@ __int thread_create(thread_startfunc_t func, void *arg):__ thread_create is used
 
 __int thread_yield(void):__ thread_yield causes the current thread to yield the CPU to the next runnable thread.  It has no effect if there are no other runnable threads. thread_yield is used to test the thread library.  A normal concurrent program should not depend on thread_yield; nor should a normal concurrent program produce incorrect answers if thread_yield calls are inserted arbitrarily.
 
-`__int thread_lock(unsigned int lock)
+__int thread_lock(unsigned int lock)
 int thread_unlock(unsigned int lock)
 int thread_wait(unsigned int lock, unsigned int cond)
 int thread_signal(unsigned int lock, unsigned int cond)
-int thread_broadcast(unsigned int lock, unsigned int cond)__`
+int thread_broadcast(unsigned int lock, unsigned int cond)__
 
 thread_lock, thread_unlock, thread_wait, thread_signal, and thread_broadcast implement [Mesa](https://en.wikipedia.org/wiki/Monitor_(synchronization)) monitors in your thread library.
 
